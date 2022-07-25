@@ -1,0 +1,61 @@
+-- Task 6 - join operation
+SELECT 
+    da.*, ds.*
+FROM
+    dress_attribute AS da
+        LEFT JOIN
+    dress_sales AS ds ON da.Dress_ID = ds.Dress_ID;
+
+-- task 7
+SELECT count(distinct(Dress_ID)) AS total_dress FROM dbtask.dress_sales
+
+
+-- Task 8 - dress with recomendation 0
+SELECT 
+    COUNT(Dress_ID) AS count_recomnedation
+FROM
+    dress_attribute
+WHERE
+    Recommendation = 0;
+
+
+-- to replace Orders with 0 in column `22/9/2013`
+
+UPDATE dress_sales 
+SET 
+    `22/9/2013` = REPLACE(`22/9/2013`, 'Orders', 0)
+WHERE
+    `22/9/2013` = 'Orders';
+
+-- task 9 and 10 to aggregate total sales by dress_ID and limit by 3 to find the third highest
+SELECT 
+    Dress_ID,
+    `29/8/2013`,
+    `31/8/2013`,
+    `09/02/2013`,
+    `09/04/2013`,
+    `09/06/2013`,
+    `09/08/2013`,
+    `09/10/2013`,
+    `09/12/2013`,
+    `14/9/2013`,
+    `16/9/2013`,
+    `18/9/2013`,
+    `20/9/2013`,
+    `22/9/2013`,
+    `24/9/2013`,
+    `26/9/2013`,
+    `28/9/2013`,
+    `30/9/2013`,
+    `10/02/2013`,
+    `10/04/2013`,
+    `10/06/2013`,
+    `10/08/2010`,
+    `10/10/2013`,
+    `10/12/2013`,
+    (`29/8/2013` + `31/8/2013` + `09/02/2013` + `09/04/2013` + `09/06/2013` + `09/08/2013` + `09/10/2013` + `09/12/2013` + `14/9/2013` + `16/9/2013` + `18/9/2013` + `20/9/2013` + `22/9/2013` + `24/9/2013` + `26/9/2013` + `28/9/2013` + `30/9/2013` + `10/02/2013` + `10/04/2013` + `10/06/2013` + `10/08/2010` + `10/10/2013` + `10/12/2013`) AS Total_sales
+FROM
+    dress_sales
+ORDER BY Total_sales DESC
+LIMIT 3;
+

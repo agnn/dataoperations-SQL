@@ -1,0 +1,10 @@
+1. Create a  table attribute dataset and dress dataset   -> db_create_table.py
+2. Do a bulk load for these two table for respective dataset -> db_insert_dress_attribute.py and db_insert_dress_sales.py
+3. Read these dataset in pandas as a dataframe -> db_sql_pandas.py,db_sql_pandas1.py
+4. Convert attribute dataset in json format -> db_as_json.py
+5. Store this dataset into mongodb  -> db_pymong.py
+6. In sql task try to perform left join operation with attribute dataset and dress dataset on column Dress_ID -> task_24-07-2022.txt(contains all SQL queries)
+7. Write a sql query to find out how many unique dress that we have based on dress id -> task_24-07-2022.txt(contains all SQL queries)
+8. Try to find out how mnay dress is having recommendation 0 -> task_24-07-2022.txt(contains all SQL queries)
+9. Try to find out total dress sell for individual dress id -> task_24-07-2022.txt(contains all SQL queries)
+10. Try to find out a third highest most selling dress id -> task_24-07-2022.txt(contains all SQL queries)
